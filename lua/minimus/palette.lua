@@ -41,12 +41,11 @@ palette.hex = {
 	none = "none"
 }
 
-palette.hsl = {}
 for k, v in pairs(palette.hex) do
 	if v == "none" then
 		goto continue
 	end
-	palette.hsl[k] = hsl(v)
+	palette[k] = hsl(v)
 	::continue::
 end
 

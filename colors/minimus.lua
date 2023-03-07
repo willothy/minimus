@@ -1,3 +1,6 @@
+vim.opt.background = 'dark'
+vim.g.colors_name = 'minimus'
+
 package.loaded['minimus'] = nil
 
-return require('minimus')
+require('lush')(require('minimus'))

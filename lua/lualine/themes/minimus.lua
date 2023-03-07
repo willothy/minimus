@@ -1,41 +1,41 @@
-local palette = require('minimus.palette').hex
+local p = require('minimus.palette').hex
 
 local minimus = {}
 
 minimus.normal = {
-	a = { fg = palette.raisin_black, bg = palette.turquoise, gui = 'bold' },
-	b = { fg = palette.text, bg = palette.gunmetal },
-	c = { fg = palette.cool_gray, bg = palette.none },
+	a = { fg = p.raisin_black, bg = p.turquoise, gui = 'bold' },
+	b = { fg = p.text, bg = p.gunmetal },
+	c = { fg = p.cool_gray, bg = p.none },
 }
 
 minimus.insert = {
-	a = { fg = palette.raisin_black, bg = palette.pale_azure, gui = 'bold' },
-	b = { fg = palette.text, bg = palette.gunmetal },
-	c = { fg = palette.cool_gray, bg = palette.none },
+	a = { fg = p.raisin_black, bg = p.pale_azure, gui = 'bold' },
+	b = { fg = p.text, bg = p.gunmetal },
+	c = { fg = p.cool_gray, bg = p.none },
 }
 
 minimus.visual = {
-	a = { fg = palette.raisin_black, bg = palette.lemon_chiffon, gui = 'bold' },
-	b = { fg = palette.text, bg = palette.gunmetal },
-	c = { fg = palette.cool_gray, bg = palette.none },
+	a = { fg = p.raisin_black, bg = p.lemon_chiffon, gui = 'bold' },
+	b = { fg = p.text, bg = p.gunmetal },
+	c = { fg = p.cool_gray, bg = p.none },
 }
 
 minimus.replace = {
-	a = { fg = palette.raisin_black, bg = palette.lavender_pink, gui = 'bold' },
-	b = { fg = palette.text, bg = palette.gunmetal },
-	c = { fg = palette.cool_gray, bg = palette.none },
+	a = { fg = p.raisin_black, bg = p.lavender_pink, gui = 'bold' },
+	b = { fg = p.text, bg = p.gunmetal },
+	c = { fg = p.cool_gray, bg = p.none },
 }
 
 minimus.command = {
-	a = { fg = palette.text, bg = palette.gunmetal, gui = 'bold' },
-	b = { fg = palette.text, bg = palette.gunmetal },
-	c = { fg = palette.cool_gray, bg = palette.none },
+	a = { fg = p.text, bg = p.gunmetal, gui = 'bold' },
+	b = { fg = p.text, bg = p.gunmetal },
+	c = { fg = p.cool_gray, bg = p.none },
 }
 
 minimus.inactive = {
-	a = { fg = palette.blueGray3, bg = palette.gunmetal, gui = 'bold' },
-	b = { fg = palette.blueGray3, bg = palette.gunmetal },
-	c = { fg = palette.blueGray3, bg = palette.none },
+	a = { fg = p.blueGray3, bg = p.gunmetal, gui = 'bold' },
+	b = { fg = p.blueGray3, bg = p.gunmetal },
+	c = { fg = p.blueGray3, bg = p.none },
 }
 
 return minimus
