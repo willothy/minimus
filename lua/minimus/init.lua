@@ -309,9 +309,9 @@ end)
 
 local gitsigns = lush(function()
 	return {
-		GitSignsAdd { fg = p.turquoise },
-		GitSignsChange { fg = p.lemon_chiffon },
-		GitSignsDelete { fg = p.red },
+		GitSignsAdd { fg = p.turquoise, gui = "bold", bold = true },
+		GitSignsChange { fg = p.lemon_chiffon, gui = "bold", bold = true },
+		GitSignsDelete { fg = p.red, gui = "bold", bold = true },
 
 		GitSignsAddPreview { fg = p.turquoise },
 		GitSignsChangePreview { fg = p.lemon_chiffon },
