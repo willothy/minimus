@@ -44,10 +44,10 @@ local base = lush(function(injected_functions)
     --
     -- Windows
     VertSplit { fg = p.cool_gray, bg = 'none' },
-    Winseparator { fg = p.cool_gray, bg = 'none' },
+    Winseparator { fg = p.cool_gray.saturate(10).darken(50), bg = 'none' },
     --
     -- Folds
-    Folded { fg = p.colombia_blue, bg = 'none' },
+    Folded { fg = p.cool_gray, bg = 'none' },
     FoldColumn { bg = 'none' },
     --
     -- Sign Column
