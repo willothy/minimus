@@ -20,7 +20,7 @@ local base = lush(function(injected_functions)
     Conceal { bg = 'none' },
     Normal { bg = nobg and 'none' or spec.bg, fg = spec.text },
     NormalNC { bg = nobg and 'none' or spec.bg, fg = spec.text.darken(30).desaturate(50) },
-    NormalFloat { bg = spec.bg2, fg = spec.text, blend = 40 },
+    NormalFloat { bg = 'none', fg = spec.text },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
     NonText { bg = 'none' },
@@ -461,11 +461,12 @@ end)
 
 local lazy = lush(function()
   return {
-    LazyNormal { blend = 40 },
+    LazyNormal { bg = 'none' },
   }
 end)
 
 local theme = lush.merge {
+  lazy,
   base,
   fidget,
   aerial,
@@ -481,7 +482,6 @@ local theme = lush.merge {
   mini,
   glance,
   toggleterm,
-  lazy,
 }
 
 return theme
