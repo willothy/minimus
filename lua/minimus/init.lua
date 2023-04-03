@@ -416,7 +416,7 @@ end)
 
 local mini_indentscope = lush(function()
   return {
-    MiniIndentscopeSymbol { fg = p.blue },
+    MiniIndentscopeSymbol { fg = p.blue, gui = 'bold', bold = true },
     MiniIndentscopePrefix { gui = 'bold' },
   }
 end)
