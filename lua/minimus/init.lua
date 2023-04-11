@@ -200,6 +200,18 @@ local base = lush(function(injected_functions)
     sym '@number' { Number }, -- Number
     sym '@boolean' { Boolean }, -- Boolean
     sym '@float' { Float }, -- Float
+
+    -- Rust
+    sym '@formatSpecifier' { fg = '#ff0000' },
+    sym '@escapeSequence' { SpecialChar },
+    sym '@selfKeyword' { fg = p.pale_azure },
+    sym '@selfTypeKeyword' { fg = p.pale_azure },
+    sym '@self' { fg = p.pale_azure },
+
+    sym '@mutable_specifier' { Keyword },
+
+    sym '@async' { Keyword },
+    sym '@callable' { Function },
     -- sym('@text.uri')          { }, -- Underlined
     -- sym('@text.underline')    { }, -- Underlined
     -- sym('@text.todo')         { }, -- Todo
