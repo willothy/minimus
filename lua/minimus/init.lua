@@ -6,6 +6,7 @@ local spec = {
   bg2 = p.gunmetal.lighten(4),
   bg3 = p.gunmetal.lighten(8),
   kw = p.blue.darken(10),
+  ident = p.uranian_blue,
   text = p.text,
 }
 
@@ -105,14 +106,14 @@ local base = lush(function(injected_functions)
     Comment { fg = p.uranian_blue.darken(20).desaturate(45) },
     --
     Constant { fg = p.tea_rose },
-    String { fg = p.flamingo.darken(10) },
+    String { fg = p.flamingo },
     Character { fg = p.pale_azure },
     Number { fg = p.maroon },
     Boolean { fg = p.maroon },
     Float { fg = p.maroon },
     --
-    Identifier { fg = p.uranian_blue },
-    Function { fg = p.turquoise },
+    Identifier { fg = spec.ident },
+    Function { fg = p.pale_azure.darken(15) },
     --
     Statement { fg = spec.kw },
     Conditional { fg = spec.kw },
@@ -121,6 +122,7 @@ local base = lush(function(injected_functions)
     Exception { fg = spec.kw },
     Operator { fg = p.cadet_gray.lighten(35) },
     Keyword { fg = spec.kw },
+    StorageClass { fg = p.blue },
     --
     Macro { fg = p.red },
     PreProc { Macro },
@@ -128,9 +130,9 @@ local base = lush(function(injected_functions)
     Define { Macro },
     --
     Type { fg = p.lemon_chiffon },
-    StorageClass { fg = p.lemon_chiffon },
     Structure { fg = p.lemon_chiffon },
     Typedef { fg = p.lemon_chiffon },
+
     --
     Special { fg = p.lavender.darken(5) },
     SpecialChar { fg = p.lavender.darken(5) },
@@ -178,7 +180,7 @@ local base = lush(function(injected_functions)
     sym '@string.special' { fg = p.lavender.darken(5) },
     sym '@string.escape' { fg = p.lavender.darken(5) },
     sym '@text.title' { fg = p.turquoise }, -- Title
-    sym '@text.reference' { fg = p.pale_azure }, -- Identifier
+    sym '@text.reference' { fg = spec.ident }, -- Identifier
     sym '@constant.macro' { Macro }, -- Define
     sym '@define' { Macro }, -- Define
     sym '@include' { Macro }, -- Include
@@ -189,9 +191,9 @@ local base = lush(function(injected_functions)
     sym '@method' { fg = p.pale_azure.mix(Function.fg, 50) }, -- Function
     sym '@namespace' { fg = p.pale_azure }, -- Identifier
     sym '@structure' { fg = p.pale_azure }, -- Structure
-    sym '@parameter' { fg = p.lavender.lighten(10) }, -- Identifier
+    sym '@parameter' { fg = spec.ident.lighten(10) }, -- Identifier
     sym '@field' { Identifier }, -- Identifier
-    sym '@property' { fg = p.uranian_blue.darken(12) }, -- Identifier
+    sym '@property' { fg = spec.ident.darken(12) }, -- Identifier
     sym '@variable' { Identifier }, -- Identifier
     sym '@macro' { Macro }, -- Macro
     sym '@string' { String }, -- String
@@ -201,17 +203,34 @@ local base = lush(function(injected_functions)
     sym '@boolean' { Boolean }, -- Boolean
     sym '@float' { Float }, -- Float
 
+    sym '@keyword' { Keyword }, -- Keyword
     -- Rust
-    sym '@formatSpecifier' { fg = '#ff0000' },
-    sym '@escapeSequence' { SpecialChar },
-    sym '@selfKeyword' { fg = p.pale_azure },
-    sym '@selfTypeKeyword' { fg = p.pale_azure },
-    sym '@self' { fg = p.pale_azure },
+    sym '@lsp.type.formatSpecifier' { SpecialChar },
+    sym '@lsp.type.escapeSequence' { SpecialChar },
+    sym '@lsp.type.selfKeyword' { Keyword },
+    sym '@lsp.type.selfTypeKeyword' { Keyword },
 
-    sym '@mutable_specifier' { Keyword },
+    sym '@lsp.type.trait' { fg = p.peach },
 
-    sym '@async' { Keyword },
-    sym '@callable' { Function },
+    sym '@lsp.type.macro' { Macro },
+    sym '@lsp.type.attribute' { Macro },
+    sym '@lsp.type.keyword' { Keyword },
+
+    -- symbols
+    sym '@lsp.type.punctuation' { Delimiter },
+    sym '@lsp.type.macroBang' { Operator },
+
+    -- operators
+    sym '@lsp.type.operator' { Operator },
+    sym '@lsp.type.property' { fg = p.red.lighten(40) },
+    sym '@lsp.type.enumMember' { fg = p.mauve },
+
+    sym '@lsp.type.builtinAttribute' { Macro },
+
+    sym '@lsp.mod.async' { Keyword },
+    sym '@lsp.mod.callable' { Function },
+    -- sym '@lsp.mod.mutable' { Keyword },
+
     -- sym('@text.uri')          { }, -- Underlined
     -- sym('@text.underline')    { }, -- Underlined
     -- sym('@text.todo')         { }, -- Todo
@@ -224,11 +243,10 @@ local base = lush(function(injected_functions)
     -- sym('@repeat')            { }, -- Repeat
     -- sym('@label')             { }, -- Label
     -- sym('@operator')          { }, -- Operator
-    -- sym('@keyword')           { }, -- Keyword
     -- sym('@exception')         { }, -- Exception
-    -- sym('@type')              { }, -- Type
-    -- sym('@type.definition')   { }, -- Typedef
-    -- sym('@storageclass')      { }, -- StorageClass
+    -- sym '@type' { fg = p.cool_gray }, -- Type
+    -- sym('@type.definition')   { fg = p.cool_gray }, -- Typedef
+    -- sym('@storageclass')      { fg = p.cool_gray }, -- StorageClass
     -- sym('@debug')             { }, -- Debug
     -- sym('@tag')               { }, -- Tag
   }
