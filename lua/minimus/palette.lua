@@ -41,6 +41,36 @@ palette.hex = {
 	none = "none"
 }
 
+palette.mode_colors = {
+	normal = palette.hex.turquoise,
+	insert = palette.hex.pale_azure,
+	visual = palette.hex.lemon_chiffon,
+	replace = palette.hex.lavender_pink,
+	command = palette.hex.peach,
+	inactive = palette.hex.gunmetal,
+}
+
+local mode_map = {
+	n = mode_colors.normal,
+	i = mode_colors.insert,
+	v = mode_colors.visual,
+	V = mode_colors.visual,
+	["\22"] = mode_colors.visual,
+	c = mode_colors.command,
+	s = mode_colors.visual,
+	S = mode_colors.visual,
+	["\19"] = mode_colors.visual,
+	R = mode_colors.replace,
+	r = mode_colors.replace,
+	["!"] = mode_colors.command,
+	t = mode_colors.command,
+}
+
+function palette.mode_color(mode)
+	local mode = vim.fn.mode(1):sub(1, 1)
+	return mode_map[mode]
+end
+
 for k, v in pairs(palette.hex) do
 	if v == "none" then
 		goto continue
