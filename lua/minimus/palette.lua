@@ -41,7 +41,7 @@ palette.hex = {
 	none = "none"
 }
 
-palette.mode_colors = {
+local mode_colors = {
 	normal = palette.hex.turquoise,
 	insert = palette.hex.pale_azure,
 	visual = palette.hex.lemon_chiffon,
