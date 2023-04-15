@@ -10,7 +10,6 @@ palette.hex = {
 	powder_blue = "#91b4d5",
 	cadet_gray = "#8da3bf",
 	cool_gray = "#7f92aa",
-	gunmetal = "#303340",
 	raisin_black = "#1b1e28",
 	colombia_blue = "#c5d2df",
 	persian_red = "#be3937",
@@ -21,6 +20,9 @@ palette.hex = {
 	pale_turquoise = "#baf5e8", --"#d0e9f5",
 	white = "#f1f1f1",
 	black = "#1f1f1f",
+	----------------------
+	gunmetal = "#303340",
+	blue_bg = '#26283f',
 	----------------------
 	rosewater = "#F5E0DC",
 	flamingo = "#F2CDCD",
