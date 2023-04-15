@@ -22,7 +22,7 @@ palette.hex = {
 	black = "#1f1f1f",
 	----------------------
 	gunmetal = "#303340",
-	blue_bg = '#26283f',
+	dark_blue = '#26283f',
 	----------------------
 	rosewater = "#F5E0DC",
 	flamingo = "#F2CDCD",

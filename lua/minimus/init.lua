@@ -3,12 +3,14 @@ local p = require 'minimus.palette'
 
 local spec = {
   -- bg = p.gunmetal,
-  bg = p.blue_bg,
+  bg = p.dark_blue,
+  -- bg = require 'lush.hsl' '#26283f',
   bg2 = p.gunmetal.lighten(4),
   bg3 = p.gunmetal.lighten(8),
   kw = p.blue.darken(10),
   ident = p.uranian_blue,
   text = p.text,
+  lnr = p.uranian_blue.darken(20).desaturate(45),
 }
 
 local nobg = false
@@ -54,9 +56,10 @@ local base = lush(function(injected_functions)
     --
     -- Sign Column
     SignColumn { bg = 'none' },
-    LineNr { bg = 'none', fg = p.colombia_blue },
+    LineNr { bg = 'none', fg = spec.lnr },
     CursorLineNr {
-      fg = spec.text.lighten(10),
+      -- fg = spec.text.lighten(10),
+      fg = spec.lnr,
       bg = 'none',
     },
     --
