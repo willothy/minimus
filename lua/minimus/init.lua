@@ -2,8 +2,8 @@ local lush = require 'lush'
 local p = require 'minimus.palette'
 
 local spec = {
-  -- bg = p.gunmetal,
-  bg = p.dark_blue,
+  bg = p.gunmetal,
+  -- bg = p.dark_blue,
   -- bg = require 'lush.hsl' '#26283f',
   bg2 = p.gunmetal.lighten(4),
   bg3 = p.gunmetal.lighten(8),
@@ -13,7 +13,7 @@ local spec = {
   lnr = p.uranian_blue.darken(20).desaturate(45),
 }
 
-local nobg = false
+local nobg = true
 
 ---@diagnostic disable: undefined-global
 local base = lush(function(injected_functions)
