@@ -10,7 +10,8 @@ local spec = {
   kw = p.blue.darken(10),
   ident = p.uranian_blue,
   text = p.text,
-  lnr = p.uranian_blue.darken(20).desaturate(45),
+  -- lnr = p.text.darken(20),
+  lnr = require 'lush.hsl' '#9196c2',
 }
 
 local nobg = true
@@ -56,11 +57,12 @@ local base = lush(function(injected_functions)
     --
     -- Sign Column
     SignColumn { bg = 'none' },
-    LineNr { bg = 'none', fg = spec.lnr },
+    LineNr { bg = 'none', fg = spec.lnr, gui = 'bold' },
     CursorLineNr {
       -- fg = spec.text.lighten(10),
       fg = spec.lnr,
       bg = 'none',
+      gui = 'bold',
     },
     --
     -- ModeMsg
@@ -499,6 +501,19 @@ local lazy = lush(function()
   }
 end)
 
+-- Comment { fg = p.uranian_blue.darken(20).desaturate(45) },
+-- --
+-- Constant { fg = p.tea_rose },
+local leap = lush(function()
+  return {
+    LeapMatch { fg = p.tea_rose },
+    LeapLabelPrimary { fg = p.tea_rose },
+    LeapLabelSecondary { fg = p.red },
+    LeapLabelSelected { fg = p.blue },
+    LeapBackdrop { fg = p.uranian_blue.darken(20).desaturate(45) },
+  }
+end)
+
 local theme = lush.merge {
   lazy,
   base,
@@ -516,6 +531,7 @@ local theme = lush.merge {
   mini,
   glance,
   toggleterm,
+  leap,
 }
 
 return theme
