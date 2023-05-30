@@ -23,13 +23,13 @@ local base = lush(function(injected_functions)
     CopilotStatusOk { fg = p.turquoise, bg = p.gunmetal },
     CopilotStatusError { fg = p.red, bg = p.gunmetal },
     Conceal { bg = 'none' },
-    Normal { bg = nobg and 'none' or spec.bg, fg = spec.text },
-    NormalNC { bg = nobg and 'none' or spec.bg, fg = spec.text.darken(30).desaturate(50) },
-    NormalFloat { bg = 'none', fg = spec.text },
+    Normal { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
+    NormalNC { bg = nobg and 'none' or spec.bg, fg = spec.text.darken(30).desaturate(50), bold = false },
+    NormalFloat { bg = 'none', fg = spec.text, bold = false },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
     NonText { bg = 'none' },
-    Directory { fg = p.blue },
+    Directory { fg = p.blue, bold = false },
     DiffAdd { fg = p.turquoise },
     DiffChange { fg = p.lemon_chiffon },
     DiffDelete { fg = p.red },
@@ -514,6 +514,16 @@ local leap = lush(function()
   }
 end)
 
+local dropbar = lush(function()
+  return {
+    WinBar { fg = spec.text },
+    WinBarNC { base.NormalNC },
+    DropBar { fg = p.blue },
+    DropBarIconUISeparator { fg = p.blue },
+    DropBarMenuCurrentContext { fg = p.blue, bg = p.dark_blue.lighten(5) },
+  }
+end)
+
 local theme = lush.merge {
   lazy,
   base,
@@ -532,6 +542,7 @@ local theme = lush.merge {
   glance,
   toggleterm,
   leap,
+  dropbar,
 }
 
 return theme
