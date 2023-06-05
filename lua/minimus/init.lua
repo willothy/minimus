@@ -36,6 +36,7 @@ local base = lush(function(injected_functions)
     DiffText { fg = p.pale_azure },
     EndOfBuffer { bg = 'none' },
     Whitespace { bg = 'none' },
+    Underlined { gui = 'underline' },
     WildMenu = { fg = p.pale_azure },
     --
     -- Cursor
@@ -128,7 +129,7 @@ local base = lush(function(injected_functions)
     Exception { fg = spec.kw },
     Operator { fg = p.cadet_gray.lighten(35) },
     Keyword { fg = spec.kw },
-    StorageClass { fg = p.blue },
+    StorageClass { fg = spec.kw },
     --
     Macro { fg = p.red },
     PreProc { Macro },
@@ -213,14 +214,16 @@ local base = lush(function(injected_functions)
     -- Rust
     sym '@lsp.type.formatSpecifier' { SpecialChar },
     sym '@lsp.type.escapeSequence' { SpecialChar },
-    sym '@lsp.type.selfKeyword' { Keyword },
+    sym '@lsp.type.selfKeyword' { fg = p.blue },
     sym '@lsp.type.selfTypeKeyword' { Keyword },
 
-    sym '@lsp.type.trait' { fg = p.peach },
+    -- sym '@lsp.type.trait' { fg = p.peach },
+    sym '@lsp.type.typeParameter' { fg = p.lemon_chiffon },
 
     sym '@lsp.type.macro' { Macro },
     sym '@lsp.type.attribute' { Macro },
     sym '@lsp.type.keyword' { Keyword },
+    sym '@lsp.type.variable' { Identifier },
 
     -- symbols
     sym '@lsp.type.punctuation' { Delimiter },
@@ -230,29 +233,31 @@ local base = lush(function(injected_functions)
     sym '@lsp.type.operator' { Operator },
     sym '@lsp.type.property' { fg = p.red.lighten(40) },
     sym '@lsp.type.enumMember' { fg = p.mauve },
+    sym '@lsp.type.typeAlias' { fg = p.lemon_chiffon },
+    sym '@lsp.type.union' { fg = p.lemon_chiffon },
 
     sym '@lsp.type.builtinAttribute' { Macro },
 
+    sym '@lsp.mod.keyword' { Keyword },
     sym '@lsp.mod.async' { Keyword },
     sym '@lsp.mod.callable' { Function },
-    -- sym '@lsp.mod.mutable' { Keyword },
+    -- sym '@lsp.mod.trait' { Keyword },
+    sym '@lsp.typemod.variable.static' { fg = p.tea_rose },
 
-    -- sym('@text.uri')          { }, -- Underlined
-    -- sym('@text.underline')    { }, -- Underlined
-    -- sym('@text.todo')         { }, -- Todo
+    sym '@text.uri' { Underlined }, -- Underlined
+    sym '@text.underline' { Underlined }, -- Underlined
+    sym '@text.todo' { Todo }, -- Todo
     -- sym('@comment')           { }, -- Comment
-    -- sym('@constant')          { }, -- Constant
-    -- sym('@constant.builtin')  { }, -- Special
+    sym '@constant.builtin' { fg = p.tea_rose }, -- Special
+    -- sym '@storageclass' { fg = p.tea_rose }, -- StorageClass
     -- sym('@function.builtin')  { }, -- Special
     -- sym('@constructor')       { }, -- Special
     -- sym('@conditional')       { }, -- Conditional
     -- sym('@repeat')            { }, -- Repeat
-    -- sym('@label')             { }, -- Label
+    -- sym '@label' { Keyword }, -- Label
     -- sym('@operator')          { }, -- Operator
     -- sym('@exception')         { }, -- Exception
     -- sym '@type' { fg = p.cool_gray }, -- Type
-    -- sym('@type.definition')   { fg = p.cool_gray }, -- Typedef
-    -- sym('@storageclass')      { fg = p.cool_gray }, -- StorageClass
     -- sym('@debug')             { }, -- Debug
     -- sym('@tag')               { }, -- Tag
   }
