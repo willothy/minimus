@@ -87,8 +87,9 @@ local base = lush(function(injected_functions)
     ColorColumn { bg = spec.bg2 },
     --
     -- Tabline
-    TabLine { bg = 'none' },
-    TabLineSel { bg = 'none' },
+    TabLine { bg = p.gunmetal, fg = p.text },
+    TabLineSel { bg = p.turquoise, fg = p.raisin_black, bold = true },
+    TabLineFill { bg = 'none' },
     CursorLine { bg = spec.bg2 },
     CursorColumn { bg = spec.bg2 },
     --
