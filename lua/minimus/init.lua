@@ -85,11 +85,19 @@ local base = lush(function(injected_functions)
     --
     -- Color column
     ColorColumn { bg = spec.bg2 },
+    -- Diagnostic
+    DiagnosticError { fg = p.persian_red.lighten(15).saturate(20) },
+    DiagnosticWarn { fg = p.lemon_chiffon.darken(10).saturate(10) },
+    DiagnosticInfo { fg = p.sapphire },
+    DiagnosticHint { fg = p.sky },
     --
     -- Tabline
-    TabLine { bg = p.gunmetal, fg = p.text },
+    TabLine { bg = p.gunmetal, fg = p.cool_gray },
     TabLineSel { bg = p.turquoise, fg = p.raisin_black, bold = true },
     TabLineFill { bg = 'none' },
+    TabLineWarn { bg = p.gunmetal, fg = DiagnosticWarn.fg },
+    TabLineError { bg = p.gunmetal, fg = DiagnosticError.fg },
+    TabLineInfo { bg = p.gunmetal, fg = DiagnosticInfo.fg },
     CursorLine { bg = spec.bg2 },
     CursorColumn { bg = spec.bg2 },
     --
@@ -160,11 +168,6 @@ local base = lush(function(injected_functions)
     LspCodeLensSeparator { bg = 'none', fg = p.cadet_gray },
     LspSignatureActiveParameter { bg = 'none', fg = p.turquoise },
     --
-    -- Diagnostic
-    DiagnosticError { fg = p.persian_red.lighten(15).saturate(20) },
-    DiagnosticWarn { fg = p.lemon_chiffon.darken(10).saturate(10) },
-    DiagnosticInfo { fg = p.sapphire },
-    DiagnosticHint { fg = p.sky },
     -- DiagnosticVirtualTextError { }
     -- DiagnosticVirtualTextWarn  { }
     -- DiagnosticVirtualTextInfo  { }
