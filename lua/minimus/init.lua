@@ -1,9 +1,10 @@
 local lush = require 'lush'
 local p = require 'minimus.palette'
+local hsl = require 'lush.hsl'
 
 local spec = {
-  bg = p.gunmetal,
-  -- bg = p.dark_blue,
+  -- bg = hsl '#26283f', --p.gunmetal,
+  bg = p.dark_blue,
   -- bg = require 'lush.hsl' '#26283f',
   bg2 = p.gunmetal.lighten(4),
   bg3 = p.gunmetal.lighten(8),
@@ -14,7 +15,7 @@ local spec = {
   lnr = require 'lush.hsl' '#9196c2',
 }
 
-local nobg = true
+local nobg = false
 
 ---@diagnostic disable: undefined-global
 local base = lush(function(injected_functions)
@@ -25,7 +26,7 @@ local base = lush(function(injected_functions)
     Conceal { bg = 'none' },
     Normal { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
     NormalNC { bg = nobg and 'none' or spec.bg, fg = spec.text.darken(30).desaturate(50), bold = false },
-    NormalFloat { bg = 'none', fg = spec.text, bold = false },
+    NormalFloat { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
     NonText { bg = 'none' },
@@ -37,7 +38,8 @@ local base = lush(function(injected_functions)
     EndOfBuffer { bg = 'none' },
     Whitespace { bg = 'none' },
     Underlined { gui = 'underline' },
-    WildMenu = { fg = p.pale_azure },
+    WildMenu { fg = p.pale_azure },
+    WinSeparator { fg = spec.bg2.saturate(20) },
     --
     -- Cursor
     Cursor { fg = '#1f1f1f', bg = '#fefefe' },
@@ -92,7 +94,7 @@ local base = lush(function(injected_functions)
     DiagnosticHint { fg = p.sky },
     --
     -- Tabline
-    TabLine { bg = p.gunmetal, fg = p.cool_gray },
+    TabLine { bg = p.gunmetal, fg = p.cool_gray, bold = true },
     TabLineSel { bg = p.turquoise, fg = p.raisin_black, bold = true },
     TabLineFill { bg = 'none' },
     TabLineWarn { bg = p.gunmetal, fg = DiagnosticWarn.fg },
