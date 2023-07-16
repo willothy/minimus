@@ -448,10 +448,10 @@ local whichkey = lush(function()
   }
 end)
 
-local mini_cursorword = lush(function()
+local cursorword = lush(function()
   return {
-    MiniCursorword { gui = 'underline' },
-    MiniCursorwordCurrent { gui = 'underline' },
+    Cursorword { bold = true },
+    CursorwordCurrent {},
   }
 end)
 
@@ -469,7 +469,7 @@ local mini_indentscope = lush(function()
 end)
 
 local mini = lush.merge {
-  mini_cursorword,
+  cursorword,
   mini_jump2d,
   mini_indentscope,
 }
