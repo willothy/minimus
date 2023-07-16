@@ -450,7 +450,7 @@ end)
 
 local cursorword = lush(function()
   return {
-    Cursorword { bold = true },
+    Cursorword { italic = true },
     CursorwordCurrent {},
   }
 end)
