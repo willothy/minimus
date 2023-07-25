@@ -40,6 +40,15 @@ local base = lush(function(injected_functions)
     Underlined { gui = 'underline' },
     WildMenu { fg = p.pale_azure },
     WinSeparator { fg = spec.bg2.saturate(20) },
+    -- Mode indicators
+    NormalMode { fg = p.turquoise },
+    InsertMode { fg = p.pale_azure },
+    VisualMode { fg = p.lemon_chiffon },
+    ReplaceMode { fg = p.lavender_pink },
+    CommandMode { fg = p.peach },
+    SelectMode { fg = p.lemon_chiffon },
+    TerminalMode { fg = p.peach },
+    TerminalNormalMode { fg = p.turquoise },
     --
     -- Cursor
     Cursor { fg = '#1f1f1f', bg = '#fefefe' },
