@@ -97,10 +97,26 @@ local base = lush(function(injected_functions)
     -- Color column
     ColorColumn { bg = spec.bg2 },
     -- Diagnostic
-    DiagnosticError { fg = p.persian_red.lighten(15).saturate(20) },
-    DiagnosticWarn { fg = p.lemon_chiffon.darken(10).saturate(10) },
-    DiagnosticInfo { fg = p.sapphire },
-    DiagnosticHint { fg = p.sky },
+    DiagnosticError { fg = p.persian_red.lighten(15).saturate(20), sp = p.persian_red.lighten(15).saturate(20) },
+    DiagnosticWarn { fg = p.lemon_chiffon.darken(10).saturate(10), sp = p.lemon_chiffon.darken(10).saturate(10) },
+    DiagnosticInfo { fg = p.sapphire, sp = p.flamingo },
+    DiagnosticHint { fg = p.sky, sp = p.sky },
+    DiagnosticUnderlineError { sp = p.persian_red.lighten(15).saturate(20), underline = true },
+    DiagnosticUnderlineWarn { sp = p.lemon_chiffon.darken(10).saturate(10), underline = true },
+    DiagnosticUnderlineInfo { sp = p.sapphire, underline = true },
+    DiagnosticUnderlineHint { sp = p.sky, underline = true },
+    -- DiagnosticVirtualTextError { }
+    -- DiagnosticVirtualTextWarn  { }
+    -- DiagnosticVirtualTextInfo  { }
+    -- DiagnosticVirtualTextHint  { }
+    -- DiagnosticFloatingError    { }
+    -- DiagnosticFloatingWarn     { }
+    -- DiagnosticFloatingInfo     { }
+    -- DiagnosticFloatingHint     { }
+    -- DiagnosticSignError        { }
+    -- DiagnosticSignWarn         { }
+    -- DiagnosticSignInfo         { }
+    -- DiagnosticSignHint         { }
     --
     -- Tabline
     TabLine { bg = p.gunmetal, fg = p.cool_gray, bold = true },
@@ -179,22 +195,6 @@ local base = lush(function(injected_functions)
     LspCodeLensSeparator { bg = 'none', fg = p.cadet_gray },
     LspSignatureActiveParameter { bg = 'none', fg = p.turquoise },
     --
-    -- DiagnosticVirtualTextError { }
-    -- DiagnosticVirtualTextWarn  { }
-    -- DiagnosticVirtualTextInfo  { }
-    -- DiagnosticVirtualTextHint  { }
-    -- DiagnosticUnderlineError   { }
-    -- DiagnosticUnderlineWarn    { }
-    -- DiagnosticUnderlineInfo    { }
-    -- DiagnosticUnderlineHint    { }
-    -- DiagnosticFloatingError    { }
-    -- DiagnosticFloatingWarn     { }
-    -- DiagnosticFloatingInfo     { }
-    -- DiagnosticFloatingHint     { }
-    -- DiagnosticSignError        { }
-    -- DiagnosticSignWarn         { }
-    -- DiagnosticSignInfo         { }
-    -- DiagnosticSignHint         { }
 
     --
     -- Treesitter
