@@ -125,7 +125,7 @@ local base = lush(function(injected_functions)
     TabLineWarn { bg = p.gunmetal, fg = DiagnosticWarn.fg },
     TabLineError { bg = p.gunmetal, fg = DiagnosticError.fg },
     TabLineInfo { bg = p.gunmetal, fg = DiagnosticInfo.fg },
-    CursorLine { bg = spec.bg2 },
+    CursorLine { bg = spec.bg2.saturate(10).darken(5) },
     CursorColumn { bg = spec.bg2 },
     --
     --Statusline
@@ -484,28 +484,30 @@ local mini = lush.merge {
 }
 
 local glance = lush(function()
+  local glance_list_bg = p.dark_blue.darken(5).desaturate(10)
+  local glance_preview_bg = p.dark_blue.lighten(2).desaturate(10)
+  local glance_winbar_bg = p.dark_blue.darken(5).desaturate(10)
   return {
-    GlancePreviewNormal { fg = p.text, bg = p.gunmetal.lighten(5) },
-    GlancePreviewMatch { fg = p.blue, bg = p.gunmetal.lighten(5) },
-    -- GlancePreviewCursorLine { },
-    GlancePreviewSignColumn { fg = p.blue, bg = p.gunmetal.lighten(5) },
-    GlancePreviewEndOfBuffer { bg = p.gunmetal.lighten(5) },
-    GlancePreviewLineNr { fg = p.colombian_blue, bg = p.gunmetal.lighten(5) },
-    GlancePreviewBorderBottom { fg = p.none, bg = p.gunmetal.lighten(5) },
-    GlanceWinBarFilename { fg = p.blue, bg = p.gunmetal },
-    GlanceWinBarFilepath { fg = p.blue, bg = p.gunmetal },
-    GlanceWinBarTitle { fg = p.blue, bg = p.gunmetal },
-    GlanceListNormal { bg = p.gunmetal },
-    GlanceListFilename { fg = p.blue, bg = p.gunmetal },
-    GlanceListFilepath { fg = p.blue, bg = p.gunmetal },
-    GlanceListCount { fg = p.red },
+    GlanceListBorderBottom { fg = p.blue, bg = p.none },
+    GlancePreviewBorderBottom { fg = p.blue, bg = p.none },
+    GlanceFoldIcon { fg = p.cool_gray },
+    GlanceIndent { fg = p.cool_gray },
+    GlanceListEndOfBuffer { fg = p.blue, bg = glance_list_bg },
+    GlanceListNormal { bg = glance_list_bg },
+    GlanceListCursorLine { bg = glance_preview_bg },
+    GlanceListFilename { fg = p.blue, bg = glance_list_bg },
+    GlanceListFilepath { fg = p.blue, bg = glance_list_bg },
     GlanceListMatch { fg = p.blue },
-    GlanceListCursorLine { fg = p.flamingo },
-    GlanceListEndOfBuffer { fg = p.blue },
-    GlanceListBorderBottom { fg = p.none, bg = p.gunmetal },
-    GlanceFoldIcon { fg = p.blue },
-    GlanceIndent { fg = p.blue },
-    GlanceBorderTop { fg = p.none, bg = p.gunmetal },
+    GlancePreviewNormal { fg = p.text, bg = glance_preview_bg },
+    GlancePreviewMatch { fg = p.blue, bg = glance_preview_bg },
+    GlancePreviewLineNr { fg = p.purple_gray, bg = glance_preview_bg },
+    GlancePreviewCursorLine { bg = glance_preview_bg },
+    GlancePreviewSignColumn { fg = p.blue, bg = glance_preview_bg },
+    GlancePreviewEndOfBuffer { fg = p.blue, bg = glance_preview_bg },
+    GlanceWinBarFilename { fg = p.blue, bg = glance_winbar_bg },
+    GlanceWinBarFilepath { fg = p.blue, bg = glance_winbar_bg },
+    GlanceWinBarTitle { fg = p.blue, bg = glance_winbar_bg },
+    GlanceBorderTop { fg = p.blue, bg = glance_winbar_bg },
   }
 end)
 

@@ -10,6 +10,7 @@ palette.hex = {
 	powder_blue = "#91b4d5",
 	cadet_gray = "#8da3bf",
 	cool_gray = "#7f92aa",
+  purple_gray = "#8f94c1",
 	raisin_black = "#1b1e28",
 	colombia_blue = "#c5d2df",
 	persian_red = "#be3937",
