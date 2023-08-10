@@ -96,6 +96,7 @@ local base = lush(function(injected_functions)
     --
     -- Color column
     ColorColumn { bg = spec.bg2 },
+    ScrollBar { bg = p.dark_blue.desaturate(5).lighten(5) },
     -- Diagnostic
     DiagnosticError { fg = p.persian_red.lighten(15).saturate(20), sp = p.persian_red.lighten(15).saturate(20) },
     DiagnosticWarn { fg = p.lemon_chiffon.darken(10).saturate(10), sp = p.lemon_chiffon.darken(10).saturate(10) },
