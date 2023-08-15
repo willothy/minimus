@@ -27,6 +27,7 @@ local base = lush(function(injected_functions)
     Normal { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
     NormalNC { bg = nobg and 'none' or spec.bg, fg = spec.text.darken(30).desaturate(50), bold = false },
     NormalFloat { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
+    HydraBorder { link = 'CursorLineNr' },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
     NonText { bg = 'none' },
