@@ -1,6 +1,9 @@
+vim.opt.background = 'dark'
+vim.g.colors_name = 'minimus'
+
 local lush = require 'lush'
-local p = require 'minimus.palette'
-local hsl = require 'lush.hsl'
+local hsl = require('lush').hsl
+local p = require 'minimus'
 
 local spec = {
   -- bg = hsl '#26283f', --p.gunmetal,
@@ -12,7 +15,7 @@ local spec = {
   ident = p.uranian_blue,
   text = p.text,
   -- lnr = p.text.darken(20),
-  lnr = require 'lush.hsl' '#9196c2',
+  lnr = hsl '#9196c2',
 }
 
 local nobg = false
