@@ -30,7 +30,7 @@ local base = lush(function(injected_functions)
     Normal { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
     NormalNC { bg = nobg and 'none' or spec.bg, fg = spec.text.darken(30).desaturate(50), bold = false },
     NormalFloat { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
-    HydraBorder { link = 'CursorLineNr' },
+    HydraBorder { link = 'CurrentMode' },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
     NonText { bg = 'none' },
@@ -76,9 +76,10 @@ local base = lush(function(injected_functions)
     LineNr { bg = 'none', fg = spec.lnr, gui = 'bold' },
     CursorLineNr {
       -- fg = spec.text.lighten(10),
-      fg = spec.lnr,
-      bg = 'none',
-      gui = 'bold',
+      -- fg = spec.lnr,
+      -- bg = 'none',
+      -- gui = 'bold',
+      link = 'CurrentMode',
     },
     --
     -- ModeMsg

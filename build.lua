@@ -36,14 +36,20 @@ local theme = require 'minimus.spec'
 
 local compiled = require 'lush.compiler'(theme)
 
+local rt_file = io.open(minimus_path .. '/lua/minimus/runtime.lua', 'r')
+local runtime = rt_file:read '*a'
+rt_file:close()
+
 local code = ([[
 -- THE FOLLOWING IS AUTO-GENERATED, DO NOT MODIFY --
 local spec = %s
 
+%s
+
 for k, v in pairs(spec) do
   vim.api.nvim_set_hl(0, k, v)
 end
-]]):format(vim.inspect(compiled))
+]]):format(vim.inspect(compiled), runtime)
 
 local f = io.open(minimus_path .. '/colors/minimus.lua', 'w+')
 f:write(code)
