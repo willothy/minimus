@@ -194,9 +194,8 @@ local base = lush(function(injected_functions)
     Todo { fg = p.lemon_chiffon, bg = 'none' },
     --
     -- LSP
-    LspReferenceText { fg = spec.text },
-    LspReferenceRead { fg = spec.text },
-    LspReferenceWrite { fg = spec.text },
+    LspReferenceRead { bg = p.dark_blue.lighten(5) },
+    LspReferenceWrite { bg = p.dark_blue.lighten(5) },
     LspCodeLens { bg = 'none', fg = p.text },
     LspCodeLensSeparator { bg = 'none', fg = p.cadet_gray },
     LspSignatureActiveParameter { bg = 'none', fg = p.turquoise },
