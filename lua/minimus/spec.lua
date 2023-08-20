@@ -471,6 +471,7 @@ local mini = lush(function()
     MiniIndentscopePrefix { gui = 'bold' },
     IndentScope { fg = '#363655', bg = 'NONE' },
     MiniTrailspace { bg = p.red },
+    IndentBlanklineChar { fg = '#363655', bg = 'NONE' },
   }
 end)
 
