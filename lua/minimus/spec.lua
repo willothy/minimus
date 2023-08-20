@@ -462,32 +462,17 @@ local whichkey = lush(function()
   }
 end)
 
-local cursorword = lush(function()
+local mini = lush(function()
   return {
     Cursorword { italic = true },
     CursorwordCurrent {},
-  }
-end)
-
-local mini_jump2d = lush(function()
-  return {
     MiniJump2dSpot { gui = 'underline bold' },
-  }
-end)
-
-local mini_indentscope = lush(function()
-  return {
     MiniIndentscopeSymbol { fg = p.blue, gui = 'bold', bold = true },
     MiniIndentscopePrefix { gui = 'bold' },
     IndentScope { fg = '#363655', bg = 'NONE' },
+    MiniTrailspace { bg = p.red },
   }
 end)
-
-local mini = lush.merge {
-  cursorword,
-  mini_jump2d,
-  mini_indentscope,
-}
 
 local glance = lush(function()
   local glance_list_bg = p.dark_blue.darken(5).desaturate(10)
