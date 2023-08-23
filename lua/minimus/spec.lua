@@ -332,6 +332,8 @@ end)
 
 local cmp = lush(function()
   return {
+    Pmenu { bg = spec.bg.darken(10) },
+    PmenuSel { bg = p.turquoise, fg = p.raisin_black },
     CmpItemAbbr { fg = p.overlay2 },
     CmpItemAbbrDeprecated { fg = p.overlay0, gui = 'strikethrough' },
     CmpItemKind { fg = p.blue },
