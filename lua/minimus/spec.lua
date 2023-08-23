@@ -325,8 +325,8 @@ end)
 
 local harpoon = lush(function()
   return {
-    HarpoonWindow = { fg = p.text, bg = 'none' },
-    HarpoonBorder = { fg = p.blue },
+    HarpoonWindow { fg = p.blue, bg = spec.bg.darken(10) },
+    HarpoonBorder { fg = p.blue, bg = spec.bg.darken(10) },
   }
 end)
 
@@ -337,7 +337,7 @@ local cmp = lush(function()
     CmpItemAbbr { fg = p.overlay2 },
     CmpItemAbbrDeprecated { fg = p.overlay0, gui = 'strikethrough' },
     CmpItemKind { fg = p.blue },
-    CmpItemMenu { fg = p.text },
+    CmpItemMenu { fg = 'NONE' },
     CmpItemAbbrMatch { fg = p.text, gui = 'bold' },
     CmpItemAbbrMatchFuzzy { fg = p.text, gui = 'bold' },
     -- kind support
@@ -443,13 +443,17 @@ end)
 
 local telescope = lush(function()
   return {
-    TelescopeBorder { fg = p.blue },
-    TelescopeSelectionCaret = { fg = p.flamingo },
-    TelescopeSelection = {
+    TelescopeSelectionCaret {
       fg = p.flamingo,
-      bg = 'none',
+      bg = spec.bg2,
     },
-    TelescopeMatching = { fg = p.blue },
+    TelescopeSelection {
+      fg = p.flamingo,
+      bg = spec.bg2,
+    },
+    TelescopeMatching { fg = p.blue },
+    TelescopeNormal { bg = spec.bg.darken(10) },
+    TelescopeBorder { bg = spec.bg.darken(10), fg = p.blue },
   }
 end)
 
