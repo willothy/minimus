@@ -29,7 +29,7 @@ local base = lush(function(injected_functions)
     Conceal { bg = 'none' },
     Normal { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
     NormalNC { bg = nobg and 'none' or spec.bg, fg = spec.text.darken(30).desaturate(50), bold = false },
-    NormalFloat { bg = nobg and 'none' or spec.bg, fg = spec.text, bold = false },
+    NormalFloat { bg = nobg and 'none' or spec.bg.darken(10), fg = spec.text, bold = false },
     HydraBorder { link = 'CurrentMode' },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
@@ -334,8 +334,7 @@ local cmp = lush(function()
   return {
     Pmenu { bg = spec.bg.darken(10) },
     PmenuSel { bg = p.turquoise, fg = p.raisin_black },
-    CmpItemAbbr { fg = p.overlay2 },
-    CmpItemAbbrDeprecated { fg = p.overlay0, gui = 'strikethrough' },
+    CmpItemAbbrDeprecated { gui = 'strikethrough' },
     CmpItemKind { fg = p.blue },
     CmpItemMenu { fg = 'NONE' },
     CmpItemAbbrMatch { fg = p.text, gui = 'bold' },
