@@ -98,7 +98,7 @@ local base = lush(function(injected_functions)
     IncSearch { fg = p.raisin_black, bg = p.turquoise },
     Search { fg = p.raisin_black, bg = p.turquoise },
     Substitute { fg = p.raisin_black, bg = p.turquoise },
-    MatchParen { fg = p.raisin_black, bg = p.turquoise },
+    MatchParen { bg = p.dark_blue.lighten(5) },
     --
     -- Color column
     ColorColumn { bg = spec.bg2 },
