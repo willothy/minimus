@@ -98,10 +98,10 @@ local base = lush(function(injected_functions)
     IncSearch { fg = p.raisin_black, bg = p.turquoise },
     Search { fg = p.raisin_black, bg = p.turquoise },
     Substitute { fg = p.raisin_black, bg = p.turquoise },
-    MatchParen { bg = p.dark_blue.lighten(5) },
+    MatchParen { bg = p.uranian_blue, fg = p.raisin_black },
     --
     -- Color column
-    ColorColumn { bg = spec.bg2 },
+    ColorColumn { bg = p.dark_blue.lighten(10) },
     ScrollBar { bg = p.dark_blue.desaturate(5).lighten(5) },
     -- Diagnostic
     DiagnosticError { fg = p.persian_red.lighten(15).saturate(20), sp = p.persian_red.lighten(15).saturate(20) },
@@ -250,7 +250,7 @@ local base = lush(function(injected_functions)
     sym '@lsp.type.punctuation' { Delimiter },
     sym '@lsp.type.macroBang' { Operator },
 
-    -- operators
+    -- operators                                    .
     sym '@lsp.type.operator' { Operator },
     sym '@lsp.type.property' { fg = p.red.lighten(40) },
     sym '@lsp.type.enumMember' { fg = p.mauve },
@@ -390,13 +390,12 @@ end)
 
 local noice = lush(function()
   return {
-    NoiceCmdline = { fg = p.text, bg = spec.bg },
-    NoiceCmdlineIcon = { fg = p.blue },
-    NoiceCmdlineIconSearch = { fg = p.lemon_chiffon },
-    NoiceCmdlinePopupBorder = { fg = p.lavender },
-    NoiceCmdlinePopupBorderSearch = { fg = p.lemon_chiffon },
-    NoiceConfirmBorder = { fg = p.blue },
-    NoiceMini = { fg = p.text },
+    NoiceCmdline { fg = p.text, bg = spec.bg },
+    NoiceCmdlineIcon { fg = p.blue },
+    NoiceCmdlineIconSearch { fg = p.lemon_chiffon },
+    NoiceCmdlinePopupBorder { fg = spec.bg, bg = spec.bg.darken(10) },
+    NoiceCmdlinePopupBorderSearch { fg = p.lemon_chiffon },
+    NoiceConfirmBorder { fg = p.blue },
   }
 end)
 
