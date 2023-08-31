@@ -31,6 +31,7 @@ local base = lush(function(injected_functions)
     NormalNC { bg = nobg and 'none' or spec.bg, fg = spec.text.darken(30).desaturate(50), bold = false },
     NormalFloat { bg = nobg and 'none' or spec.bg.darken(10), fg = spec.text, bold = false },
     NormalFloatInv { fg = spec.bg.darken(10), bg = 'NONE', bold = false },
+    CmdlineBorder { fg = spec.bg, bg = spec.bg.darken(10) },
     HydraBorder { link = 'CurrentMode' },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
@@ -382,9 +383,9 @@ end)
 
 local trouble = lush(function()
   return {
-    TroubleText = { fg = p.blue },
-    TroubleCount = { fg = p.text },
-    TroubleNormal = { fg = p.text },
+    -- TroubleText { fg = p.blue },
+    -- TroubleCount { fg = p.text },
+    TroubleNormal { bg = spec.bg },
   }
 end)
 
