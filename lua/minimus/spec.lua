@@ -282,6 +282,22 @@ local base = lush(function(injected_functions)
     -- sym '@type' { fg = p.cool_gray }, -- Type
     -- sym('@debug')             { }, -- Debug
     -- sym('@tag')               { }, -- Tag
+    ReachBorder { bg = NormalFloat.bg, fg = Title.fg },
+    ReachDirectory { bg = NormalFloat.bg, fg = Directory.fg },
+    ReachModifiedIndicator { bg = NormalFloat.bg, fg = String.fg },
+    ReachHandleBuffer { bg = NormalFloat.bg, fg = String.fg },
+    ReachHandleDelete { bg = NormalFloat.bg, fg = Error.fg },
+    ReachHandleSplit { bg = NormalFloat.bg, fg = Directory.fg },
+    ReachTail { bg = NormalFloat.bg, fg = Normal.fg },
+    ReachHandleMarkLocal { bg = NormalFloat.bg, fg = Type.fg },
+    ReachHandleMarkGlobal { bg = NormalFloat.bg, fg = Number.fg },
+    ReachMark { bg = NormalFloat.bg, fg = Normal.fg },
+    ReachMarkLocation { bg = NormalFloat.bg, fg = Comment.fg },
+    ReachHandleTabpage { bg = NormalFloat.bg, fg = TabLineSel.fg },
+    ReachGreyOut { bg = NormalFloat.bg, fg = Comment.fg },
+    ReachMatchExact { bg = NormalFloat.bg, fg = String.fg },
+    ReachPriority { bg = NormalFloat.bg, fg = Special.fg },
+    ReachCurrent { bg = NormalFloat.bg, fg = Title.fg },
   }
 end)
 

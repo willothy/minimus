@@ -51,9 +51,11 @@ for k, v in pairs(spec) do
 end
 ]]):format(vim.inspect(compiled), runtime)
 
-local f = io.open(minimus_path .. '/colors/minimus.lua', 'w+')
-f:write(code)
-f:close()
+local f = io.open(minimus_path .. '/colors/minimus.lua', 'w')
+if f then
+  f:write(code)
+  f:close()
+end
 
 if vim.g.colors_name == 'minimus' then
   vim.cmd.colorscheme 'minimus'
