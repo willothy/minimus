@@ -557,6 +557,7 @@ local dropbar = lush(function()
     DropBar { fg = p.blue },
     DropBarIconUISeparator { fg = p.blue },
     DropBarMenuCurrentContext { fg = p.blue, bg = p.dark_blue.lighten(5) },
+    DropBarMenuScrollBar { fg = p.blue, bg = p.dark_blue.lighten(5) },
   }
 end)
 
