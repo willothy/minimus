@@ -489,7 +489,7 @@ local mini = lush(function()
     Cursorword { italic = true },
     CursorwordCurrent {},
     MiniJump2dSpot { gui = 'underline bold' },
-    MiniIndentscopeSymbol { fg = p.blue, gui = 'bold', bold = true },
+    MiniIndentscopeSymbol { fg = p.pale_azure.darken(15), gui = 'bold', bold = true },
     MiniIndentscopePrefix { gui = 'bold' },
     IndentScope { fg = '#363655', bg = 'NONE' },
     MiniTrailspace { bg = p.red },
