@@ -475,12 +475,13 @@ end)
 
 local whichkey = lush(function()
   return {
-    WhichKey { fg = p.flamingo },
-    WhichKeyGroup { fg = p.blue },
-    WhichKeySeperator { fg = p.overlay0 },
-    WhichKeyDesc { fg = p.pink },
-    WhichKeyBorder { fg = p.blue },
-    WhichKeyValue { fg = p.overlay0 },
+    WhichKey { fg = p.flamingo, bg = spec.bg.darken(10) },
+    WhichKeySeparator { fg = p.uranian_blue.darken(20).desaturate(45), bg = spec.bg.darken(10) },
+    WhichKeyValue { fg = p.uranian_blue.darken(20).desaturate(45), bg = spec.bg.darken(10) },
+    WhichKeyGroup { fg = p.blue, bg = spec.bg.darken(10) },
+    WhichKeyDesc { fg = p.pink, bg = spec.bg.darken(10) },
+    WhichKeyBorder { fg = p.blue, bg = spec.bg.darken(10) },
+    WhichKeyFloat { fg = spec.text, bg = spec.bg.darken(10) },
   }
 end)
 
