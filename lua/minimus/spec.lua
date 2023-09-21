@@ -32,6 +32,7 @@ local base = lush(function(injected_functions)
     NormalFloat { bg = nobg and 'none' or spec.bg.darken(10), fg = spec.text, bold = false },
     NormalFloatInv { fg = spec.bg.darken(10), bg = 'NONE', bold = false },
     CmdlineBorder { fg = spec.bg, bg = spec.bg.darken(10) },
+    FloatBorder { fg = spec.bg, bg = spec.bg.darken(10) },
     HydraBorder { link = 'CurrentMode' },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
