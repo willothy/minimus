@@ -560,7 +560,11 @@ local dropbar = lush(function()
     DropBar { fg = p.blue },
     DropBarIconUISeparator { fg = p.blue },
     DropBarMenuCurrentContext { fg = p.blue, bg = p.dark_blue.lighten(5) },
-    DropBarMenuScrollBar { fg = p.blue, bg = p.dark_blue.lighten(5) },
+    -- DropBarMenuScrollBar { fg = p.blue, bg = p.dark_blue.lighten(5) },
+    -- DropBarMenuSbar { fg = p.blue, bg = p.dark_blue.lighten(5) },
+    DropBarMenuSbar { bg = spec.bg.darken(15), fg = spec.text },
+    DropBarMenuThumb { fg = p.blue, bg = p.dark_blue.lighten(5) },
+    -- DropBarMenuSbar { fg = p.blue, bg = p.dark_blue.lighten(5) },
   }
 end)
 
