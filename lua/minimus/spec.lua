@@ -541,6 +541,12 @@ local lazy = lush(function()
   }
 end)
 
+local edgy = lush(function()
+  return {
+    EdgyTitle = { fg = spec.bg.lighten(10) },
+  }
+end)
+
 -- Comment { fg = p.uranian_blue.darken(20).desaturate(45) },
 -- --
 -- Constant { fg = p.tea_rose },
@@ -588,6 +594,7 @@ local theme = lush.merge {
   toggleterm,
   leap,
   dropbar,
+  edgy,
 }
 
 return theme
