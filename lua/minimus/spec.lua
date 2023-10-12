@@ -73,7 +73,7 @@ local base = lush(function(injected_functions)
     Winseparator { fg = p.cool_gray.saturate(10).darken(50), bg = 'none' },
     --
     -- Folds
-    Folded { fg = p.cool_gray, bg = 'none' },
+    Folded { Normal },
     FoldColumn { bg = 'none' },
     --
     -- Sign Column
