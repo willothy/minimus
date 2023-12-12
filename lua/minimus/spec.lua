@@ -35,6 +35,7 @@ local base = lush(function(injected_functions)
     CmdlineBorder { fg = spec.bg, bg = spec.bg.darken(10) },
     FloatBorder { fg = p.pale_azure.darken(15), bg = spec.bg.darken(10) },
     FloatTitle { fg = p.blue, bg = spec.bg.darken(10) },
+    FloatFooter { fg = p.blue, bg = spec.bg.darken(10) },
     HydraBorder { link = 'CurrentMode' },
     Visual { bg = spec.bg3 },
     VisualNOS { bg = spec.bg3 },
