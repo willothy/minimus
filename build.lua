@@ -49,6 +49,8 @@ local spec = %s
 for k, v in pairs(spec) do
   vim.api.nvim_set_hl(0, k, v)
 end
+
+vim.g.colors_name ='minimus'
 ]]):format(vim.inspect(compiled), runtime)
 
 local f = io.open(minimus_path .. '/colors/minimus.lua', 'w')
