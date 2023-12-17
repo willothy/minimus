@@ -133,6 +133,7 @@ local base = lush(function(injected_functions)
     -- Tabline
     TabLine { bg = p.gunmetal, fg = p.cool_gray, bold = true },
     TabLineSel { bg = p.turquoise, fg = p.raisin_black, bold = true },
+    -- TabLineFill { bg = spec.bg.darken(10) },
     TabLineFill { bg = 'none' },
     TabLineWarn { bg = p.gunmetal, fg = DiagnosticWarn.fg },
     TabLineError { bg = p.gunmetal, fg = DiagnosticError.fg },
@@ -141,8 +142,8 @@ local base = lush(function(injected_functions)
     CursorColumn { bg = spec.bg2 },
     --
     --Statusline
-    StatusLine { bg = spec.bg },
-    StatusLineNC { bg = spec.bg.lighten(1) },
+    StatusLine { fg = p.cadet_gray, bg = spec.bg.darken(10) },
+    StatusLineNC { fg = p.cadet_gray, bg = spec.bg.darken(5) },
     --
     -- Spell
     SpecialKey { fg = p.red },
