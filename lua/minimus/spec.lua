@@ -214,10 +214,11 @@ local base = lush(function(injected_functions)
     sym '@string.special' { fg = p.lavender.darken(5) },
     sym '@string.escape' { fg = p.lavender.darken(5) },
 
-    sym '@text.title' { fg = p.turquoise }, -- Title
-    sym '@text.strike' { strikethrough = true }, -- Strike
-    sym '@text.strong' { bold = true }, -- Bold
+    sym '@text.title' { fg = p.turquoise },
+    sym '@text.strike' { strikethrough = true },
+    sym '@text.strong' { bold = true },
     sym '@text.underline' { underline = true },
+    sym '@text.emphasis' { italic = true },
 
     syn '@text.warning' { DiagnosticWarn },
     sym '@text.todo' { Todo },
