@@ -16,12 +16,13 @@ palette.hex = {
   tea_rose = '#e8b1b0',
   lavender_pink = '#fcc5e9',
   pale_purple = '#fee4fc',
-  pale_turquoise = '#baf5e8', --"#d0e9f5",
+  pale_turquoise = '#baf5e8',
   white = '#f1f1f1',
   black = '#1f1f1f',
   ----------------------
   gunmetal = '#303340',
   dark_blue = '#26283f',
+  github_dark = '#0d1117',
   ----------------------
   rosewater = '#F5E0DC',
   flamingo = '#F2CDCD',

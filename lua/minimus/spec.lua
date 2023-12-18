@@ -1,3 +1,7 @@
+-- TODO: this is a mess
+-- Refactor to be modular and reuse spec colors more often
+-- instead of accessing the palette directly
+
 vim.opt.background = 'dark'
 vim.g.colors_name = 'minimus'
 
@@ -8,6 +12,8 @@ local p = require 'minimus'
 local spec = {
   -- bg = hsl '#26283f', --p.gunmetal,
   bg = p.dark_blue,
+  -- bg = p.github_dark,
+
   -- bg = require 'lush.hsl' '#26283f',
   bg2 = p.gunmetal.lighten(4),
   bg3 = p.gunmetal.lighten(8),
