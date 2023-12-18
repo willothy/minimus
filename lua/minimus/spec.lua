@@ -213,8 +213,17 @@ local base = lush(function(injected_functions)
     sym '@text.literal' {},
     sym '@string.special' { fg = p.lavender.darken(5) },
     sym '@string.escape' { fg = p.lavender.darken(5) },
+
     sym '@text.title' { fg = p.turquoise }, -- Title
-    sym '@text.reference' { fg = spec.ident }, -- Identifier
+    sym '@text.strike' { strikethrough = true }, -- Strike
+    sym '@text.strong' { bold = true }, -- Bold
+    sym '@text.underline' { underline = true },
+
+    syn '@text.warning' { DiagnosticWarn },
+    sym '@text.todo' { Todo },
+    sym '@text.uri' { underline = true },
+    sym '@text.reference' { fg = spec.ident },
+
     sym '@constant.macro' { Macro }, -- Define
     sym '@define' { Macro }, -- Define
     sym '@include' { Macro }, -- Include
@@ -271,9 +280,6 @@ local base = lush(function(injected_functions)
     -- sym '@lsp.mod.trait' { Keyword },
     sym '@lsp.typemod.variable.static' { fg = p.tea_rose },
 
-    sym '@text.uri' { Underlined }, -- Underlined
-    sym '@text.underline' { Underlined }, -- Underlined
-    sym '@text.todo' { Todo }, -- Todo
     -- sym('@comment')           { }, -- Comment
     sym '@constant.builtin' { fg = p.tea_rose }, -- Special
     -- sym '@storageclass' { fg = p.tea_rose }, -- StorageClass
