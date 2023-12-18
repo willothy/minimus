@@ -226,7 +226,7 @@ local base = lush(function(injected_functions)
     sym '@text.underline' { underline = true },
     sym '@text.emphasis' { italic = true },
 
-    syn '@text.warning' { DiagnosticWarn },
+    -- syn '@text.warning' { DiagnosticWarn },
     sym '@text.todo' { Todo },
     sym '@text.uri' { underline = true },
     sym '@text.reference' { fg = spec.ident },
