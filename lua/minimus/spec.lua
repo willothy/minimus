@@ -137,8 +137,10 @@ local base = lush(function(injected_functions)
     -- DiagnosticSignHint         { }
     --
     -- Tabline
-    TabLine { bg = p.gunmetal, fg = p.cool_gray, bold = true },
-    TabLineSel { bg = p.turquoise, fg = p.raisin_black, bold = true },
+    -- TabLine { bg = p.gunmetal, fg = p.cool_gray, bold = true },
+    -- TabLineSel { bg = p.turquoise, fg = p.raisin_black, bold = true },
+    TabLine { bg = spec.bg.darken(10), fg = p.cool_gray, bold = true },
+    TabLineSel { bg = spec.bg.darken(10), fg = p.cadet_gray, bold = true },
     -- TabLineFill { bg = spec.bg.darken(10) },
     TabLineFill { bg = 'none' },
     TabLineWarn { bg = p.gunmetal, fg = DiagnosticWarn.fg },
