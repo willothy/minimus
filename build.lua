@@ -42,6 +42,9 @@ rt_file:close()
 
 local code = ([[
 -- THE FOLLOWING IS AUTO-GENERATED, DO NOT MODIFY --
+vim.cmd.highlight("clear")
+vim.g.colors_name = "minimus"
+
 local spec = %s
 
 %s
@@ -49,8 +52,6 @@ local spec = %s
 for k, v in pairs(spec) do
   vim.api.nvim_set_hl(0, k, v)
 end
-
-vim.g.colors_name ='minimus'
 ]]):format(vim.inspect(compiled), runtime)
 
 local f = io.open(minimus_path .. '/colors/minimus.lua', 'w')
