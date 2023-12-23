@@ -37,8 +37,11 @@ local theme = require 'minimus.spec'
 local compiled = require 'lush.compiler'(theme)
 
 local rt_file = io.open(minimus_path .. '/lua/minimus/runtime.lua', 'r')
-local runtime = rt_file:read '*a'
-rt_file:close()
+local runtime = ''
+if rt_file then
+  runtime = rt_file:read '*a'
+  rt_file:close()
+end
 
 local code = ([[
 -- THE FOLLOWING IS AUTO-GENERATED, DO NOT MODIFY --
