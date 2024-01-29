@@ -570,7 +570,7 @@ end)
 local dropbar = lush(function()
   return {
     WinBar { fg = spec.text.darken(10) },
-    WinBarNC { base.NormalNC },
+    WinBarNC { WinBar },
     DropBar { fg = p.blue },
     DropBarIconUISeparator { fg = p.blue },
     DropBarMenuCurrentContext { fg = p.blue, bg = p.dark_blue.lighten(5) },
