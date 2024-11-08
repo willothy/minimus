@@ -98,10 +98,10 @@ local base = lush(function(injected_functions)
     MoreMsg { fg = p.turquoise },
     --
     -- Popup
-    Pmenu { bg = spec.bg2, fg = spec.text },
+    Pmenu { bg = NormalFloat.bg, fg = spec.text },
     PmenuSel { bg = p.turquoise, fg = p.raisin_black },
-    PmenuSbar { bg = p.cool_gray, fg = p.cool_gray.readable() },
-    PmenuThumb { bg = p.turquoise, fg = p.raisin_black },
+    PmenuSbar { bg = NormalFloat.bg.lighten(5), fg = NormalFloat.fg },
+    PmenuThumb { bg = Visual.bg, fg = Visual.fg },
     --
     -- Search
     IncSearch { fg = p.raisin_black, bg = p.turquoise },
