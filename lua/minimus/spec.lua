@@ -100,7 +100,7 @@ local base = lush(function(injected_functions)
     -- Popup
     Pmenu { bg = NormalFloat.bg, fg = spec.text },
     PmenuSel { bg = p.turquoise, fg = p.raisin_black },
-    PmenuSbar { bg = NormalFloat.bg.lighten(2), fg = NormalFloat.fg },
+    PmenuSbar { bg = NormalFloat.bg, fg = NormalFloat.fg },
     PmenuThumb { bg = Visual.bg, fg = Visual.fg },
     --
     -- Search
